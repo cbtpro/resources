@@ -23,6 +23,31 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.45/dist/themes/base.css">
   <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.45/dist/shoelace.js"></script>
   <title>资源下载</title>
+  <style>
+    .container {
+      display: flex
+    }
+    .card-overview {
+      max-width: 300px;
+      margin: 10px;
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center;
+    }
+    .card-overview [slot="image"] {
+      width: 280px;
+      padding: 10px;
+    }
+    .card-overview [name="title"] {
+      color: #000;
+      font-size: 16px;
+    }
+    .card-overview [slot="footer"] {
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -42,32 +67,27 @@
       <div slot="footer">
         <sl-button type="primary" pill>更多信息</sl-button>
         <a href="./assets/vue-devtools_5_3_4_0.crx" target="_blank" alt="vue-devtools 5.3.4"><sl-button type="primary" pill>下载</sl-button></a>
-        <sl-rating></sl-rating>
+        <!-- <sl-rating></sl-rating> -->
       </div>
     </sl-card>
+    <sl-card class="card-overview">
+      <img
+        slot="image" 
+        src="https://v3.cn.vuejs.org/logo.png" 
+        alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+      >
     
-    <style>
-      .card-overview {
-        max-width: 300px;
-        margin: 10px;
-        display: flex; 
-        justify-content: space-between; 
-        align-items: center;
-      }
-      .card-overview [slot="image"] {
-        width: 280px;
-        padding: 10px;
-      }
-      .card-overview [name="title"] {
-        color: #000;
-        font-size: 16px;
-      }
-      .card-overview [slot="footer"] {
-        display: flex; 
-        justify-content: space-between; 
-        align-items: center;
-      }
-    </style>
+      <strong name="title">postman-interceptor 1.1.2</strong><br>
+      <sl-tag type="primary">chrome</sl-tag>
+      <sl-tag type="primary">crx</sl-tag>
+      <sl-tag type="primary">devtools</sl-tag>
+      <br>
+    
+      <div slot="footer">
+        <a href="./assets/postman-interceptor-1.1.2.crx" target="_blank" alt="postman-interceptor 1.1.2"><sl-button type="primary" pill>下载</sl-button></a>
+        <!-- <sl-rating></sl-rating> -->
+      </div>
+    </sl-card>
   </div>
 </body>
 </html>
